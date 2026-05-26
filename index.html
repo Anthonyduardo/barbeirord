@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agendamento Barbearia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <section class="hero-panel">
+      <div class="hero-copy">
+        <span class="brand-logo">Barbeiro RD</span>
+        <h1>Agende seu corte com rapidez e estilo</h1>
+        <p>Preencha seus dados e confirme. Você será direcionado ao WhatsApp do barbeiro automaticamente.</p>
+      </div>
+      <div class="hero-card">
+        <div class="card-header">
+          <h2>Agendamento Digital</h2>
+          <p>Conexão direta com o WhatsApp do barbeiro</p>
+        </div>
+        <form id="bookingForm" class="booking-form">
+          <div class="field-group">
+            <label for="clientName">Nome do cliente</label>
+            <input id="clientName" type="text" placeholder="Seu nome completo" required />
+          </div>
+          <div class="field-group">
+            <label for="clientPhone">Telefone (Teletone)</label>
+            <input id="clientPhone" type="tel" placeholder="(92) 9 1234-5678" required />
+          </div>
+          <div class="field-group split-grid">
+            <div>
+              <label for="serviceDate">Data</label>
+              <input id="serviceDate" type="date" required />
+            </div>
+            <div>
+              <label for="serviceTime">Hora</label>
+              <select id="serviceTime" required></select>
+            </div>
+          </div>
+          <div class="field-group blocked-panel">
+            <p>Horários indisponíveis para a data selecionada:</p>
+            <div id="blockedTimes" class="blocked-times">Nenhum horário ocupado ainda.</div>
+          </div>
+          <div class="field-group">
+            <label>Escolha o serviço</label>
+            <div class="option-grid" id="serviceOptions">
+              <button type="button" class="service-option active" data-type="serviço" data-title="Corte degradê" data-price="40" data-duration="40">Corte degradê<br><span>R$ 40</span></button>
+              <button type="button" class="service-option" data-type="serviço" data-title="Corte Social" data-price="30" data-duration="30">Corte Social<br><span>R$ 30</span></button>
+              <button type="button" class="service-option" data-type="serviço" data-title="Barba Simples" data-price="30" data-duration="25">Barba Simples<br><span>R$ 30</span></button>
+              <button type="button" class="service-option" data-type="serviço" data-title="Barboterapia" data-price="40" data-duration="40">Barboterapia<br><span>R$ 40</span></button>
+              <button type="button" class="service-option" data-type="serviço" data-title="Sobrancelha" data-price="10" data-duration="15">Sobrancelha<br><span>R$ 10</span></button>
+            </div>
+          </div>
+          <div class="field-group">
+            <label>Ou escolha um plano fidelidade</label>
+            <div class="option-grid" id="planOptions">
+              <button type="button" class="service-option" data-type="plano" data-title="Plano Black" data-price="160" data-duration="120">Plano Black<br><span>R$ 160</span></button>
+              <button type="button" class="service-option" data-type="plano" data-title="Plano Blue" data-price="135" data-duration="80">Plano Blue<br><span>R$ 135</span></button>
+              <button type="button" class="service-option" data-type="plano" data-title="Plano Red" data-price="130" data-duration="70">Plano Red<br><span>R$ 130</span></button>
+              <button type="button" class="service-option" data-type="plano" data-title="Plano White" data-price="120" data-duration="75">Plano White<br><span>R$ 120</span></button>
+            </div>
+          </div>
+          <div class="summary-card" id="summaryCard">
+            <div>
+              <strong>Serviço selecionado</strong>
+              <p id="summaryTitle">Corte degradê</p>
+            </div>
+            <div>
+              <strong>Valor</strong>
+              <p id="summaryPrice">R$ 40,00</p>
+            </div>
+          </div>
+          <button id="confirmButton" type="submit" class="cta-button">Confirmar agendamento</button>
+        </form>
+      </div>
+    </section>
+    <section class="details-panel">
+      <div class="info-card">
+        <h2>Serviços e duração</h2>
+        <ul>
+          <li><strong>Corte degradê</strong> — 40 min • R$ 40</li>
+          <li><strong>Corte Social</strong> — 30 min • R$ 30</li>
+          <li><strong>Barba Simples</strong> — 25 min • R$ 30</li>
+          <li><strong>Barboterapia</strong> — 40 min • R$ 40</li>
+          <li><strong>Sobrancelha</strong> — 15 min • R$ 10</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h2>Planos fidelidade</h2>
+        <ul>
+          <li><strong>Plano Black</strong> — Corte, Barba, Sobrancelha e Espoliação • R$ 160</li>
+          <li><strong>Plano Blue</strong> — Corte Degradê e Sobrancelha • R$ 135</li>
+          <li><strong>Plano Red</strong> — Corte na Tesoura • R$ 130</li>
+          <li><strong>Plano White</strong> — Corte Social e Sobrancelha • R$ 120</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>Anthony Dev • @antzbarros</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
